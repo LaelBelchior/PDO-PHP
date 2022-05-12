@@ -17,4 +17,5 @@ while ($studentData = $statement->fetch(PDO::FETCH_ASSOC)){
     );
 
     echo $student -> age() . PHP_EOL;
+    echo $student -> name() . PHP_EOL;
 }
