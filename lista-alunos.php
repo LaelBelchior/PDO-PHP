@@ -8,15 +8,13 @@ $databasePath = __DIR__ . '/banco.sqlite';
 $pdo = new PDO('sqlite:' . $databasePath);
 
 $statement = $pdo->query('SELECT * FROM students;');
-$studentDataList = $statement->fetchAll(PDO::FETCH_ASSOC);
-$studentList = [];
 
-foreach($studentDataList as $student){
-    $studentList[] = new Student(
-        $student['id'],
-        $student['name'],
-        new DateTimeImmutable($student['birth_date'])
+while ($studentData = $statement->fetch(PDO::FETCH_ASSOC)){
+    $student = new Student(
+        $studentData['id'],
+        $studentData['name'],
+        new DateTimeImmutable($studentData['birth_date'])
     );
-}
 
-var_dump($studentList);
+    echo $student -> age() . PHP_EOL;
+}
