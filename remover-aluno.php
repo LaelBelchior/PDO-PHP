@@ -2,8 +2,7 @@
 
 require_once 'vendor/autoload.php';
 
-$databasePath = __DIR__ . '/banco.sqlite';
-$pdo = new PDO('sqlite:' . $databasePath);
+$pdo = \Alura\Pdo\Infraestructure\Persistence\ConnectionCreator::createConnection();
 
 $sqlDelete = "DELETE FROM students WHERE id = ?;";
 
