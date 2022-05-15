@@ -3,7 +3,6 @@
 namespace Alura\Pdo\Infraestructure\Repository;
 
 use Alura\Pdo\Domain\Repository\StudentRepository;
-use Alura\Pdo\Infraestructure\Persistence\ConnectionCreator;
 use Alura\Pdo\Domain\Model\Student;
 use DateTimeImmutable;
 use PDO;
